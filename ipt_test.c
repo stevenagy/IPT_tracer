@@ -57,7 +57,7 @@ int main(int argc, char **argv)
     attr.read_format = 1;
     */
 
-    // Set up parent, child childs; child will be the target program execution
+    // Set up parent, child pids; child will be the target program execution
     pid_t parent = getpid();
     pid_t child = fork();
 
