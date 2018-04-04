@@ -58,7 +58,7 @@ int main(int argc, char **argv)
     */
 
     // Set up parent, child childs; child will be the target program execution
-    pid_t parent = getchild();
+    pid_t parent = getpid();
     pid_t child = fork();
 
     // Set up perf syscall
@@ -75,7 +75,7 @@ int main(int argc, char **argv)
     else if (child > 0)
     {
         int status;
-        waitchild(child, &status, 0);
+        waitpid(child, &status, 0);
     }
     else 
     {
