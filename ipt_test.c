@@ -58,8 +58,8 @@ int main(int argc, char **argv)
     */
 
     // Set up parent, child childs; child will be the target program execution
-    child_t parent = getchild();
-    child_t child = fork();
+    pid_t parent = getchild();
+    pid_t child = fork();
 
     // Set up perf syscall
     int perf_fd = syscall(SYS_perf_event_open, &attr, child, -1, -1, 0);
